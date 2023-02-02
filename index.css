@@ -140,3 +140,71 @@ path {
 main p {
   opacity: 0.7;
 }
+
+@media (max-width: 1920px) {
+  main {
+    width: calc(16em + 16vw);
+    font-size: calc(1.7em + 1.7vw);
+  }
+  .logo-container {
+    width: calc(2em + 2vw);
+    height: calc(2em + 2vw);
+  }
+  svg {
+    width: calc(1em + 1vw);
+    height: calc(1em + 1vw);
+    padding: calc(0.1em + 0.1vw);
+  }
+
+  img {
+    width: calc(10em + 10vw);
+  }
+
+  .view2-text:nth-child(4) {
+    line-height: calc(1.2em + 1.2vw);
+  }
+}
+
+@media (max-width: 1600px) {
+  main {
+    width: calc(14em + 14vw);
+    font-size: calc(0.7em + 0.7vw);
+  }
+  .logo-container {
+    width: calc(1em + 1vw);
+    height: calc(1em + 1vw);
+  }
+}
+
+@media (max-width: 1366px) {
+  main {
+    width: calc(14em + 14vw);
+    font-size: calc(0.5em + 0.5vw);
+  }
+  .logo-container {
+    width: calc(1em + 1vw);
+    height: calc(1em + 1vw);
+  }
+
+  .view2-text:nth-child(4) {
+    line-height: calc(1em + 1vw);
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    width: calc(14.5em + 14.5vw);
+    font-size: calc(1em + 1vw);
+  }
+
+  /* h1 {
+    font-size: calc(0.99em + 0.99vw);
+  } */
+  .logo-container {
+    width: calc(1.2em + 1.2vw);
+    height: calc(1.2em + 1.2vw);
+  }
+  svg {
+    padding: calc(0.2em + 0.2vw);
+  }
+}
