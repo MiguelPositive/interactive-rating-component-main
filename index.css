@@ -1,121 +1,142 @@
 @font-face {
-    
-    src: url("./fonts/Overpass-VariableFont_wght.ttf");
-    font-family: "Overpass" ;
-    
+  src: url("./fonts/Overpass-VariableFont_wght.ttf");
+  font-family: "Overpass";
 }
 
-*{
-    box-sizing: border-box;
-    color: white;
-    font-family: "Overpass" ;
+* {
+  box-sizing: border-box;
+  color: white;
+  font-family: "Overpass";
 }
 
 body {
+  background-color: #141519;
 
-    background-color: #141519;
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
 
-    margin: 0;
-    min-width: 100vw;
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
+  font-size: calc(0.5em + 0.5vw);
+  background-color: #1f252f;
 
-    background-color: #1F252F;
+  overflow: hidden;
 
-    overflow: hidden;
-
-    border-radius: calc(1em + 1vw);
-    width: calc(14em + 14vw);
-    padding: calc(1.1em + 1.1vw);
-
-
-    
+  border-radius: calc(1em + 1vw);
+  width: calc(14em + 14vw);
+  padding: calc(1.1em + 1.1vw);
 }
 
 .logo-container {
+  background-color: #232f3e;
 
-    background-color: #232F3E;
+  border-radius: 1000rem;
+  padding-top: calc(0.4em + 0.4vw);
+  padding-bottom: calc(0.4em + 0.4vw);
+  width: calc(1.4em + 1.4vw);
 
-    border-radius: 1000rem;
-    padding-top: calc(0.4em + 0.4vw);
-    padding-bottom: calc(0.4em + 0.4vw);
-    width: calc(1.4em + 1.4vw);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 path {
-    color: #E97518;
-  
+  color: #e97518;
 }
 
 .numbers {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: aqua; */
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
-
 
 .btn-submit {
+  transition: 0.3s ease all;
+  text-align: center;
+  background-color: #fc7613;
+  cursor: pointer;
 
-   transition: 0.3s ease all;
-   text-align: center;
-   background-color: #FC7613;
-   cursor: pointer; 
-   
-    height: calc(1.4em + 1.4vw);
-    margin-top: calc(0.7em + 0.7vw);
-    border-radius: 1000rem;
+  height: calc(1.4em + 1.4vw);
+  margin-top: calc(0.7em + 0.7vw);
+  border-radius: 1000rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.number:nth-child(n + 1){
-    background-color: #262F38;
-    cursor: pointer;
-    font-weight: bold;
+.image {
+  text-align: center;
 
-    width: calc(1.5em + 1.5vw);
-    height: calc(1.5em + 1.5vw);
-    border-radius: 20rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-
-main p{
-
-    font-size: calc(0.5em + 0.5vw);
-    opacity: 0.7;
-}
-
-.number:nth-child(n + 1):hover {
-
-    background-color: #7D8798;
+  width: 100%;
+  margin-top: calc(0.4em + 0.4vw);
+  margin-bottom: calc(0.8em + 0.8vw);
 }
 
 .btn-submit:hover {
-
-    color: #E18D53;
-    font-weight: bold;
-    background-color: #FFFFFF;
+  color: #e18d53;
+  font-weight: bold;
+  background-color: #ffffff;
 }
 
+.view2-text:nth-child(2) {
+  background-color: #242b34;
+  text-align: center;
+  color: #a25215;
+  font-weight: bold;
 
+  height: calc(1.4em + 1.4vw);
+  margin-bottom: calc(0.4em + 0.4vw);
+  padding: calc(0.3em + 0.3vw);
+  border-radius: 1000rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view2-text:nth-child(3) {
+  text-align: center;
+  font-size: calc(0.7em + 0.7vw);
+
+  width: 100%;
+}
+
+.view2-text:nth-child(4) {
+  opacity: 0.6;
+  text-align: center;
+  font-size: calc(0.6em + 0.6vw);
+  line-height: calc(0.8em + 0.8vw);
+}
+
+.number:nth-child(n + 1) {
+  background-color: #262f38;
+  cursor: pointer;
+  font-weight: bold;
+
+  width: calc(1.5em + 1.5vw);
+  height: calc(1.5em + 1.5vw);
+  border-radius: 20rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number:nth-child(n + 1):hover {
+  background-color: #7d8798;
+}
+
+#view2 {
+  display: none;
+}
+
+main p {
+  opacity: 0.7;
+}
