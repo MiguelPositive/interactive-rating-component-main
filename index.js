@@ -95,6 +95,8 @@ const handleSubmit = () => {
   view2.style.justifyContent = "center";
   view2.style.alignItems = "center";
   view2.style.flexWrap = "wrap";
+
+  main.className = "animate__animated animate__backInDown";
 };
 
 n1.addEventListener("click", handleClickSelect);
