@@ -10,11 +10,13 @@ const number3 = document.getElementById("number3");
 const number4 = document.getElementById("number4");
 const number5 = document.getElementById("number5");
 
-let selected1 = false;
-let selected2 = false;
-let selected3 = false;
-let selected4 = false;
-let selected5 = false;
+const buttons = {
+  button1: false,
+  button2: false,
+  button3: false,
+  button4: false,
+  button5: false,
+};
 
 const MOUSEOUT_STYLES = `
 
@@ -31,12 +33,57 @@ display: flex;
 justifyContent: center;
 alignItems: center;`;
 
-const number1Selected = () => {
-  selected1 = true;
-  selected2 = false;
-  selected3 = false;
-  selected4 = false;
-  selected5 = false;
+const detectButton = (number) => {
+  for (let index = 1; index <= 5; index++) {
+    switch (number) {
+      case 1:
+        buttons.button1 = true;
+        buttons.button2 = false;
+        buttons.button3 = false;
+        buttons.button4 = false;
+        buttons.button5 = false;
+        break;
+
+      case 2:
+        buttons.button1 = false;
+        buttons.button2 = true;
+        buttons.button3 = false;
+        buttons.button4 = false;
+        buttons.button5 = false;
+        break;
+
+      case 3:
+        buttons.button1 = false;
+        buttons.button2 = false;
+        buttons.button3 = true;
+        buttons.button4 = false;
+        buttons.button5 = false;
+
+        break;
+
+      case 4:
+        buttons.button1 = false;
+        buttons.button2 = false;
+        buttons.button3 = false;
+        buttons.button4 = true;
+        buttons.button5 = false;
+        break;
+      case 5:
+        buttons.button1 = false;
+        buttons.button2 = false;
+        buttons.button3 = false;
+        buttons.button4 = false;
+        buttons.button5 = true;
+        break;
+
+      default:
+        break;
+    }
+  }
+};
+
+const button1Selected = () => {
+  detectButton(1);
 
   number1.style.cssText = "transition: 0.3s; opacity: 1; background: gray";
   number2.style.cssText = "background: #262F38; opacity: 0.4;";
@@ -46,13 +93,8 @@ const number1Selected = () => {
 
   view2Text1.textContent = "You selected 1 out 5";
 };
-
-const number2Selected = () => {
-  selected1 = false;
-  selected2 = true;
-  selected3 = false;
-  selected4 = false;
-  selected5 = false;
+const button2Selected = () => {
+  detectButton(2);
 
   number1.style.cssText = "background: #262F38; opacity: 0.4;";
   number2.style.cssText = "transition: 0.3s; opacity: 1; background: gray";
@@ -63,13 +105,8 @@ const number2Selected = () => {
   view2Text1.textContent = "You selected 2 out 5";
 };
 
-const number3Selected = () => {
-  selected1 = false;
-  selected2 = false;
-  selected3 = true;
-  selected4 = false;
-  selected5 = false;
-
+const button3Selected = () => {
+  detectButton(3);
   number1.style.cssText = "background: #262F38; opacity: 0.4;";
   number2.style.cssText = "background: #262F38; opacity: 0.4;";
   number3.style.cssText = "transition: 0.3s; opacity: 1; background: gray";
@@ -79,12 +116,8 @@ const number3Selected = () => {
   view2Text1.textContent = "You selected 3 out 5";
 };
 
-const number4Selected = () => {
-  selected1 = false;
-  selected2 = false;
-  selected3 = false;
-  selected4 = true;
-  selected5 = false;
+const button4Selected = () => {
+  detectButton(4);
 
   number1.style.cssText = "background: #262F38; opacity: 0.4;";
   number2.style.cssText = "background: #262F38; opacity: 0.4;";
@@ -95,12 +128,8 @@ const number4Selected = () => {
   view2Text1.textContent = "You selected 4 out 5";
 };
 
-const number5Selected = () => {
-  selected1 = false;
-  selected2 = false;
-  selected3 = false;
-  selected4 = false;
-  selected5 = true;
+const button5Selected = () => {
+  detectButton(5);
 
   number1.style.cssText = "background: #262F38; opacity: 0.4;";
   number2.style.cssText = "background: #262F38; opacity: 0.4;";
@@ -112,24 +141,24 @@ const number5Selected = () => {
 const handleClickSelect = (e) => {
   switch (e.target.id) {
     case "number1":
-      number1Selected();
+      button1Selected();
 
       break;
 
     case "number2":
-      number2Selected();
+      button2Selected();
       break;
 
     case "number3":
-      number3Selected();
+      button3Selected();
       break;
 
     case "number4":
-      number4Selected();
+      button4Selected();
       break;
 
     case "number5":
-      number5Selected();
+      button5Selected();
       break;
 
     default:
@@ -165,8 +194,8 @@ document.addEventListener("mouseover", (e) => {
 
 document.addEventListener("mouseout", (e) => {
   if (e.target.matches("#number1")) {
-    if (selected1) {
-      number1Selected();
+    if (buttons.button1) {
+      button1Selected();
     } else {
       number1.style.cssText = `
       
@@ -175,28 +204,28 @@ document.addEventListener("mouseout", (e) => {
       view2Text1.textContent = "You selected 1 out 5";
     }
   } else if (e.target.matches("#number2")) {
-    if (selected2) {
-      number2Selected();
+    if (buttons.button2) {
+      button2Selected();
     } else {
       number2.style.cssText = MOUSEOUT_STYLES;
 
       view2Text1.textContent = "You selected 1 out 5";
     }
   } else if (e.target.matches("#number3")) {
-    if (selected3) {
-      number3Selected();
+    if (buttons.button3) {
+      button3Selected();
     } else {
       number3.style.cssText = MOUSEOUT_STYLES;
     }
   } else if (e.target.matches("#number4")) {
-    if (selected4) {
-      number4Selected();
+    if (buttons.button4) {
+      button4Selected();
     } else {
       number4.style.cssText = MOUSEOUT_STYLES;
     }
   } else if (e.target.matches("#number5")) {
-    if (selected5) {
-      number5Selected();
+    if (buttons.button5) {
+      button5Selected();
     } else {
       number5.style.cssText = MOUSEOUT_STYLES;
     }
